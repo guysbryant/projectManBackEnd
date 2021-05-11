@@ -1,6 +1,6 @@
 class ProjectSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :name, :description, :tasks
+  attributes :name, :description
   attribute :tasks do |project|
     project.tasks.map do |task|
       {
