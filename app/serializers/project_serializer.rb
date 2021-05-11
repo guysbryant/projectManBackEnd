@@ -7,7 +7,7 @@ class ProjectSerializer
         id: task.id,
         name: task.name,
         description: task.description,
-        users: task.users.map{ |user| {id: user.id, name: user.name} }
+        users: task.users.map{ |user| {id: user.id, attributes: {name: user.name}} }
       }
     end
   end
