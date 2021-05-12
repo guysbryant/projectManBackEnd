@@ -5,9 +5,11 @@ class ProjectSerializer
     project.tasks.map do |task|
       {
         id: task.id,
-        name: task.name,
-        description: task.description,
-        users: task.users.map{ |user| {id: user.id, attributes: {name: user.name}} }
+        attributes: {
+          name: task.name,
+          description: task.description,
+          users: task.users.map{ |user| {id: user.id, attributes: {name: user.name}} }
+        }
       }
     end
   end
